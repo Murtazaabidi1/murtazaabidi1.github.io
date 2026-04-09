@@ -1,0 +1,125 @@
+---
+layout: default
+title: Publications
+navbar_title: Publications
+container_class: container-xl
+---
+
+<h2 class="mt-4 mb-3">Publications</h2>
+
+<h3 class="mt-4 mb-3 border-bottom pb-2">Conference</h3>
+
+{% assign pubs = site.publications | sort: "date" | reverse %}
+{% assign conf_pubs = pubs | where: "pub_type", "Conference" %}
+{% assign conf_first = conf_pubs | where: "authorship", "1st Author" %}
+{% assign conf_second = conf_pubs | where: "authorship", "2nd Author" %}
+
+{% for pub in conf_first %}
+<div class="card mt-3">
+  <div class="card-body">
+    <div class="row align-items-center">
+      <div class="col-md-3 text-center mb-3 mb-md-0">
+        {% if pub.image and pub.image != "" %}
+        <div style="height:160px; display:flex; align-items:center; justify-content:center; background:#f8f9fa; border:1px solid #dee2e6; border-radius:8px; padding:8px;">
+          <img src="{{ pub.image | relative_url }}" alt="{{ pub.title }}" style="max-height:140px; max-width:100%; object-fit:contain;">
+        </div>
+        {% endif %}
+      </div>
+      <div class="col-md-9">
+        <h4>{{ pub.title }}</h4>
+        <div><strong>Authors:</strong> {{ pub.authors | join: ", " }}</div>
+        <div><strong>Venue:</strong> {{ pub.venue }}</div>
+        <div><strong>Status:</strong> {{ pub.status }}</div>
+        <div><strong>Role:</strong> {{ pub.authorship }}</div>
+        {% if pub.paper_pdf and pub.paper_pdf != "" %}
+        <div class="mt-2"><a href="{{ pub.paper_pdf | relative_url }}">[PDF]</a></div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+{% for pub in conf_second %}
+<div class="card mt-3">
+  <div class="card-body">
+    <div class="row align-items-center">
+      <div class="col-md-3 text-center mb-3 mb-md-0">
+        {% if pub.image and pub.image != "" %}
+        <div style="height:160px; display:flex; align-items:center; justify-content:center; background:#f8f9fa; border:1px solid #dee2e6; border-radius:8px; padding:8px;">
+          <img src="{{ pub.image | relative_url }}" alt="{{ pub.title }}" style="max-height:140px; max-width:100%; object-fit:contain;">
+        </div>
+        {% endif %}
+      </div>
+      <div class="col-md-9">
+        <h4>{{ pub.title }}</h4>
+        <div><strong>Authors:</strong> {{ pub.authors | join: ", " }}</div>
+        <div><strong>Venue:</strong> {{ pub.venue }}</div>
+        <div><strong>Status:</strong> {{ pub.status }}</div>
+        <div><strong>Role:</strong> {{ pub.authorship }}</div>
+        {% if pub.paper_pdf and pub.paper_pdf != "" %}
+        <div class="mt-2"><a href="{{ pub.paper_pdf | relative_url }}">[PDF]</a></div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+<h3 class="mt-5 mb-3 border-bottom pb-2">Journal</h3>
+
+{% assign journal_pubs = pubs | where: "pub_type", "Journal" %}
+{% assign journal_first = journal_pubs | where: "authorship", "1st Author" %}
+{% assign journal_second = journal_pubs | where: "authorship", "2nd Author" %}
+
+{% for pub in journal_first %}
+<div class="card mt-3">
+  <div class="card-body">
+    <div class="row align-items-center">
+      <div class="col-md-3 text-center mb-3 mb-md-0">
+        {% if pub.image and pub.image != "" %}
+        <div style="height:160px; display:flex; align-items:center; justify-content:center; background:#f8f9fa; border:1px solid #dee2e6; border-radius:8px; padding:8px;">
+          <img src="{{ pub.image | relative_url }}" alt="{{ pub.title }}" style="max-height:140px; max-width:100%; object-fit:contain;">
+        </div>
+        {% endif %}
+      </div>
+      <div class="col-md-9">
+        <h4>{{ pub.title }}</h4>
+        <div><strong>Authors:</strong> {{ pub.authors | join: ", " }}</div>
+        <div><strong>Venue:</strong> {{ pub.venue }}</div>
+        <div><strong>Status:</strong> {{ pub.status }}</div>
+        <div><strong>Role:</strong> {{ pub.authorship }}</div>
+        {% if pub.paper_pdf and pub.paper_pdf != "" %}
+        <div class="mt-2"><a href="{{ pub.paper_pdf | relative_url }}">[PDF]</a></div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+{% for pub in journal_second %}
+<div class="card mt-3">
+  <div class="card-body">
+    <div class="row align-items-center">
+      <div class="col-md-3 text-center mb-3 mb-md-0">
+        {% if pub.image and pub.image != "" %}
+        <div style="height:160px; display:flex; align-items:center; justify-content:center; background:#f8f9fa; border:1px solid #dee2e6; border-radius:8px; padding:8px;">
+          <img src="{{ pub.image | relative_url }}" alt="{{ pub.title }}" style="max-height:140px; max-width:100%; object-fit:contain;">
+        </div>
+        {% endif %}
+      </div>
+      <div class="col-md-9">
+        <h4>{{ pub.title }}</h4>
+        <div><strong>Authors:</strong> {{ pub.authors | join: ", " }}</div>
+        <div><strong>Venue:</strong> {{ pub.venue }}</div>
+        <div><strong>Status:</strong> {{ pub.status }}</div>
+        <div><strong>Role:</strong> {{ pub.authorship }}</div>
+        {% if pub.paper_pdf and pub.paper_pdf != "" %}
+        <div class="mt-2"><a href="{{ pub.paper_pdf | relative_url }}">[PDF]</a></div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
