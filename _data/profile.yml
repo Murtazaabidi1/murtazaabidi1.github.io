@@ -18,9 +18,7 @@ orcid: 0009-0005-3895-5237
 short_bio_text_justify: false
 short_bio: >-
   <p>
-  I am an AI Researcher at the Hyper-connected Unmanned Autonomous Vehicle (HCAV) Research Center specializing in 3D Vision, Multi-Modals (LVLM, VLA), and Physical AI.
-  My work focuses on advancing autonomous driving and depth estimation.
-
+  I am an R&D AI Scientist at ROSAIC.ai, where I conduct research on Physical AI and intelligent robotic manipulation. My research focuses on Vision-Language-Action (VLA), Vision-Force-Language-Action (VFLA), PrimitiveVLA, and Physics-Informed VLAs for contact-rich manipulation. I develop multimodal robotic learning systems that integrate vision, force, and tactile sensing, while exploring foundation models, long-horizon manipulation, manipulation-oriented world models, multimodal dataset creation, and sim-to-real learning using NVIDIA Isaac Sim.
   </p>
 
 portrait_url: /assets/images/photos/ME.jpeg
@@ -39,11 +37,16 @@ education:
   position: B.S. in Computer Science
   date: Sep. 2019 - Jul. 2023
 
-# experience:
-# - name: Peking University
-#   logo: /assets/images/badges/PKU_red.png
-#   position: Research Intern
-#   date: Sep. 2019 - Jul. 2021
+experience:
+- name: ROSIAC.ai
+  logo: assets/images/badges/rosaic_ai-removebg.png
+  position: AI Research Scientist
+  date: Jul. 2026 - Present
+
+- name: Wens Lab / HCAV
+  logo: assets/images/badges/wens.png
+  position: Researcher
+  date: Mar. 2024 - Jun. 2026
 
 awards:
 - name: Neurocomputing Paper Acceptance
