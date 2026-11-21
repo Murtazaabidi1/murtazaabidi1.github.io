@@ -1,83 +1,78 @@
-# academic-homepage
+# Murtaza Hussain — Physical AI Research Portfolio
 
-![Preview](assets/images/etc/preview.png)
+**🌐 Live website: [murtazaabidi1.github.io](https://murtazaabidi1.github.io/)**
 
-[![pages-build-deployment](https://github.com/luost26/academic-homepage/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/luost26/academic-homepage/actions/workflows/pages/pages-build-deployment)
-[![Hits](https://hits.sh/github.com/luost26/academic-homepage.svg?view=today-total)](https://hits.sh/github.com/luost26/academic-homepage/)
-[![GitHub stars](https://img.shields.io/github/stars/luost26/academic-homepage)](https://github.com/luost26/academic-homepage)
-[![GitHub forks](https://img.shields.io/github/forks/luost26/academic-homepage)](https://github.com/luost26/academic-homepage/forks)
-<!--[![W3C Validation](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Fluost26.github.io%2Facademic-homepage)](https://validator.nu/?doc=https%3A%2F%2Fluost26.github.io%2Facademic-homepage)-->
+Physical AI — Model Team Lead at [ROSAIC.ai](https://rosaic.ai/en), Seoul, South Korea.
 
-A GitHub Pages (Jekyll) template for personal academic website. Click [here](https://luost.me/academic-homepage/) to see the demo.
+## Overview
 
-## User Community
+This repository contains the source of my personal research portfolio. It presents my work in
+**Physical AI**, covering robotic manipulation, multimodal robot learning, and 3D computer vision, together
+with my projects, publications, experience, and a downloadable CV.
 
-[🏡](https://luost.me/)
-[:star:](https://cch1999.github.io/)
-[:star:](https://kyrrego.github.io/)
-[:star:](https://ced3-han.github.io/)
-[:star:](https://lihengchen.com/)
-[:star:](https://hpwang-whu.github.io/)
-[:star:](https://zhang-yingyi.github.io/)
-[:star:](https://wby24.github.io/)
-[:star:](https://pengfeixu.com/)
-[:star:](https://boqiuphd.github.io/)
-[:star:](https://www.huabing.li/)
-[:star:](https://xiecuiying.github.io/)
-[:star:](https://hannyang.github.io/)
-[:star:](https://king-play.github.io/)
-[🤖](https://andrewcwlee.github.io)
-[:star:](https://laiyao1.github.io)
-[🌜](https://tmsultan.github.io)
-[🚀](https://zaxguo.github.io)
-[:gemini:](https://hongyang-du.github.io)
-[🇻‍🇳](https://thuanz123.github.io)
-[🧬](https://gdalba.github.io/)
-[🇭🇰](https://yhhan.com/)
-[🌔](https://chen-huaneng.github.io/academic)
+## Research Areas
 
-:hugs: Feel free to tell us if you are using this template for your website by creating an issue [here](https://github.com/luost26/academic-homepage/issues/new?assignees=&labels=&projects=&template=user-report.md&title=I+am+using+this+template%21).
+- **Vision-Language-Action models**: learning manipulation policies from vision, language, and force
+- **Force-aware manipulation**: contact-rich manipulation and the contribution of force sensing
+- **Multimodal robot learning**: synchronized vision, force, and robot-state data for reliable learning
+- **Robot motion planning**: robot modeling, kinematics, and collision-aware planning
+- **3D vision**: geometry-aware learning and state-space architectures for point clouds
 
-### Acknowledgements
+## Featured Projects
 
-The improvements of this template have been inspired by the customizations and feedbacks from the following users:
-- :star: [onethousandwu.com](https://onethousandwu.com/): increased corner radius [[Repo]](https://github.com/oneThousand1000/oneThousand1000.github.io)
-- :star: [shiwonkim.github.io](https://shiwonkim.github.io/): two-column main page layout [[Repo]](https://github.com/shiwonkim/shiwonkim.github.io)
+| Project | Summary | Platform |
+| --- | --- | --- |
+| **LG Grasping KPI** | ROS 2-based cable-grasping system on the physical NACHI MZ07, integrating multimodal sensing and a real-time dashboard for grasp monitoring and evaluation. | NACHI MZ07 · Robotiq 2F-85 |
+| **NACHI MZ07 + MoveIt 2** | ROS 2 / MoveIt 2 framework for collision-aware motion planning, mock trajectory execution, and virtual cable-grasping demonstrations. | NACHI MZ07 · MoveIt 2 (Simulation) |
+| **Hybrid Dual VFLA** | Dual-system manipulation framework: deterministic System 1 control with bounded, force-aware System 2 residual corrections, safety supervision, and live RGB and force/torque monitoring. | Doosan E0509 · NVIDIA Isaac Sim |
+| **Vision–Force Ablation** | True RGB-only baseline built by removing force modules, compared with RGB+force, with attention analysis to diagnose an incorrect target-selection failure. | Franka FR3 · Vision–Force Learning |
+| **Franka–NACHI Integration** | Policy-generated trajectories executed on the real NACHI MZ07 through ROS 2 pose conversion, chunked 200 Hz command transport, and feedback re-anchoring, plus a reusable multi-robot execution architecture design. | Franka FR3 · NACHI MZ07 |
+| **Multimodal Sensor & Dataset Reliability** | Reproducible multimodal robot-learning data: force/torque synchronization checks, versioned observation and action contracts, and an audited 96-episode simulation dataset. | NVIDIA Isaac Sim |
 
+Full details, validation status, and results are on the [Projects page](https://murtazaabidi1.github.io/projects.html).
+Industrial projects are summarized at a public level only; their source code is not part of this repository.
 
-## Need Help?
+## Website Features
 
-If you run into **any** issues while using this template, or have suggestions for improvements, please don't hesitate to create an issue [here](https://github.com/luost26/academic-homepage/issues/new).
+- **Responsive design**: mobile-first layouts tested from 320 px to 1440 px
+- **Light / dark mode**: follows the device setting, remembers the visitor's choice, and loads without a flash of the wrong theme
+- **Publications**: first-author and co-author papers with status, venue, and links
+- **Projects**: compact homepage cards plus a detailed page with objectives, implementation, and key results
+- **Journey & Highlights**: a chronological timeline of academic, research, and professional milestones
+- **Downloadable CV**: linked from the hero and contact sections
+- **Accessibility & SEO**: keyboard-friendly navigation, visible focus states, Open Graph metadata, sitemap
 
-### FAQs
-- [Need blogging feature?](https://github.com/luost26/academic-homepage/issues/13#issuecomment-2646371324)
-- [How to show citation count for papers?](https://github.com/luost26/academic-homepage/issues/29#issuecomment-3222496187)
+## Technology Stack
 
+- [Jekyll](https://jekyllrb.com/): static site generator, with content driven by YAML files in `_data/`
+- HTML, CSS (custom properties, no framework), and vanilla JavaScript
+- [GitHub Pages](https://pages.github.com/): hosting and deployment
 
-## Getting Started
+## Local Development
 
-1. First, fork this repository or click the "Use this template" button to create a new repository. The name of the repository should be `<your-github-username>.github.io` (click [here](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites) to learn more about naming a GitHub Pages repository).
-   - If you plan to customize the functionality or style of the template, and do not want to get updates from this repository, choose "Use this template".
-   - If you plan to only edit the content (biography, publications, news, etc.), and would like to get updates from this repository, choose "Fork".
-   - If you want to contribute to this project, fork the repository and submit a pull request.
+Requires Ruby and Bundler ([Jekyll installation guide](https://jekyllrb.com/docs/installation/)).
 
-### Running Locally (Debug & Preview)
+```bash
+bundle install
+bundle exec jekyll serve --livereload
+```
 
-2. Follow the **step 1** and **step 2** of the instruction [here](https://jekyllrb.com/docs/) to install prerequisites and jekyll.
+Then open <http://127.0.0.1:4000>.
 
-3. Clone your forked repository to your local machine.
+| To update | Edit |
+| --- | --- |
+| Profile, education, awards | `_data/profile.yml` |
+| Projects | `_data/projects.yml` |
+| Experience | `_data/experience.yml` |
+| Journey & Highlights timeline | `_data/timeline.yml` |
+| Publications | `_publications/*.md` |
 
-4. Run the following command in the root directory of the repository:
+## Acknowledgements
 
-   ```bash
-   bundle exec jekyll serve
-   ```
+This site was originally based on the
+[academic-homepage](https://github.com/luost26/academic-homepage) Jekyll template by Shitong Luo,
+released under the MIT License (see [`LICENSE`](LICENSE)). It has since been substantially redesigned.
 
-5. Browse to the displayed URL to see the website.
+---
 
-### Deploying to GitHub Pages
-
-2. Go to the repository settings and enable GitHub Pages. Detailed instructions can be found [here](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-your-site).
-
-3. Navigate to your created website, and follow the instructions displayed on the homepage (if any) to finalize the setup.
-
+© Murtaza Hussain · [Website](https://murtazaabidi1.github.io/) · [GitHub](https://github.com/Murtazaabidi1) · [Google Scholar](https://scholar.google.com/citations?user=bnPVocQAAAAJ&hl=en) · [LinkedIn](https://www.linkedin.com/in/murtazahussain0/)
