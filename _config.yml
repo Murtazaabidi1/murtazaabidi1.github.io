@@ -1,19 +1,11 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+title: "Murtaza Hussain"
+description: >-
+  Murtaza Hussain — Physical AI Model Team Lead at ROSAIC.ai, Seoul. Research on
+  Vision-Language-Action models, force-aware robotic manipulation, and multimodal robot learning.
+url: "https://murtazaabidi1.github.io"
 baseurl: ""
+lang: en
 
 # Build settings
 markdown: kramdown
@@ -27,30 +19,44 @@ kramdown:
     block:
       line_numbers: false
       start_line: 1
-plugins:
-  - jekyll-email-protect
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-
-# timezone: Asia/Shanghai
+# Files that must not be published. Note: setting `exclude` replaces Jekyll's
+# defaults, so the usual Ruby/Bundler entries are listed here too.
+exclude:
+  - CV/main.tex          # CV source (contains unpublished/commented-out material)
+  - "CV/Murtaza 3-Month-Presentation --English.pdf"   # internal ROSAIC review — never publish
+  # Anonymized double-blind review copies — not to be distributed while under review.
+  - assets/papers/EdgeDAM_CVPR_2026_.pdf
+  - assets/papers/CylindMamba.pdf
+  - files/CylinMamba3D.pdf
+  - fav-icon.png            # favicon source; sized copies live in assets/favicon/
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - .sass-cache
+  - .jekyll-cache
+  - blogs.html           # template demo pages (kept in the repo, not built)
+  - showcase.html
+  - _layouts/blog.html
 
 collections:
   publications:
     output: true
+  # Template demo collections: kept in the repo but no longer published.
   blogs:
-    output: true
-    permalink: /posts/:year/:month/:title/
+    output: false
   news:
-    output: true
+    output: false
   showcase:
-    output: true
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: publication

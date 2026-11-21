@@ -1,0 +1,506 @@
+%-------------------------
+% Resume in Latex
+% Author : Aras Gungore
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+\usepackage{ragged2e}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+\input{glyphtounicode}
+
+
+%---------- FONT OPTIONS ----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeEducationHeading}[6]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+      \textit{\small#5} & \textit{\small #6} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeOrganizationHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{\small #2} \\
+      \textit{\small#3}
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%---------- HEADING ----------
+\begin{center}
+    \textbf{\Huge \scshape Murtaza Hussain} \\ \vspace{3pt}
+    \small
+    \faMobile \hspace{.5pt} \href{+82 10 3062 0169}{+82 10 3062 0169}
+    $|$
+    \faAt \hspace{.5pt} \href{mailto:mrmurtaza.cs@gmail.com}{mrmurtaza.cs@gmail.com}
+    $|$
+    \faLinkedinSquare \hspace{.5pt} \href{https://www.linkedin.com/in/murtazahussain0/}{LinkedIn}
+    $|$
+    \faGithub \hspace{.5pt} \href{https://github.com/Murtazaabidi1}{GitHub}
+    $|$
+    \faGlobe \hspace{.5pt} \href{https://murtazaabidi1.github.io/}{Portfolio}
+\end{center}
+
+%----------- EDUCATION -----------
+\section{Education}
+\vspace{-2pt}
+\resumeSubHeadingListStart
+\resumeEducationHeading
+  {Kumoh National Institute of Technology}{Gumi-si, South Korea}
+  {M.S. in IT Convergence Engineering; \textbf{GPA: 4.38/4.50}}{March 2024 \textbf{--} February 2026}
+  {}{}
+\resumeEducationHeading
+  {Shaheed Zulfikar Ali Bhutto Institute of Science and Technology (SZABIST)}{Karachi, Pakistan}
+  {B.S. in Computer Science; \textbf{GPA: 3.44/4.00}}{Sept 2019 \textbf{--} June 2023}
+  {}{}
+\resumeSubHeadingListEnd
+%----------- SKILLS -----------
+\section{Skills}
+\vspace{-2pt}
+
+% \resumeSubHeadingListStart
+% \small{\item{
+%   \textbf{Languages:} Python, C++ \\ \vspace{3pt}
+
+%   \textbf{Deployment Platforms:} Edge Devices, NVIDIA Jetson Orin NX, Intel NUC 15 \\ \vspace{3pt}
+
+%   \textbf{Frameworks:} PyTorch, TensorFlow, OpenCV, ROS/ROS 2, Docker \\ \vspace{3pt}
+
+%   \textbf{AI Stack:} 2D/3D Object Detection, Semantic and Instance Segmentation, Object Tracking, Vision-Language Models (VLMs), Vision-Language-Action Models (VLAs), Physical AI \\ \vspace{3pt}
+
+%   \textbf{Additional Skills:} Jira, Slack, Git, Linux
+% }}
+% \resumeSubHeadingListEnd
+\textbf{Research:} Physical AI, Robotic Manipulation, Vision-Language-Action Models, Multimodal Learning, Force/Tactile Sensing, World Models, 3D Vision, Sim-to-Real.
+
+\textbf{Robotics:} ROS 2, NVIDIA Isaac Sim, MuJoCo, MoveIt 2, Franka FR3, NACHI MZ07, Scout-Mini, Holybro X500, RGB-D, Force/Torque Sensing, Tactile Sensing.
+
+\textbf{Deep Learning:} PyTorch, Vision-Language Models, 2D/3D Perception,
+Object Detection, Semantic/Instance Segmentation, State-Space Models.
+
+\textbf{Systems:} Python, C++, Docker, Linux, NVIDIA Jetson Orin NX, Git.
+
+%----------- EXPERIENCE -----------
+\section{Experience}
+\vspace{-2pt}
+
+\resumeSubHeadingListStart
+% \resumeSubheading
+%   {\href{https://rosaic.ai/en}{Rosaic.ai}}{Seoul, South Korea}
+%   {Physical AI -- Research Scientist}{July 2026 \textbf{--} Present, Full-time}
+% \resumeItemListStart
+%   \resumeItem{\textbf{Shared-Backbone Multi-Task Vision Network:} Built a unified multi-task vision model with a shared backbone and task-specific heads for depth estimation, semantic segmentation, and RGB object detection, enabling efficient joint scene understanding.}
+%   \resumeItem{\textbf{World Model-Based Physical AI Navigation for Unitree Go2:} Developed a world model-driven navigation framework for the Unitree Go2 quadruped robot, leveraging future-state prediction for localization, mapping, and autonomous decision-making in dynamic environments.}
+% \resumeItemListEnd
+
+% \resumeSubheading
+% {\href{https://rosaic.ai/en}{Rosaic.ai}}{Seoul, South Korea}
+% {Physical AI -- Research Scientist}{July 2026 \textbf{--} Present, Full-time}
+% \resumeItemListStart
+
+% \resumeItem{\textbf{Vision--Language--Force--Action (VFLA) Manipulation:} Developed force-aware Vision-Language-Action architectures integrating RGB, robot state, and force/torque sensing for contact-sensitive manipulation and physics-aware action prediction in industrial robotic tasks.}
+
+% \resumeItem{\textbf{RGB vs. RGB+Force Model Optimization:} Designed controlled RGB-only and RGB+force ablations and refactored the RGB-only architecture to completely remove force encoders and force-dependent modules instead of zero-filling F/T inputs, enabling clean modality comparison and more efficient inference.}
+
+% \resumeItem{\textbf{Franka FR3--NACHI MZ07 Multi-Robot Pipeline:} Designed and implemented a robot-independent manipulation architecture using canonical TCP-pose commands, calibrated frame transformations, ROS~2 robot adapters, and shared execution interfaces for transferring learned actions across research and industrial manipulators.}
+
+% \resumeItem{\textbf{Hybrid VFLA Control and Safety:} Designed a hybrid execution architecture combining learned VFLA action generation with deterministic motion control, force/contact constraints, workspace validation, execution-state management, feeddback control-loop and robot-specific safety safeguards for physical deployment.}
+
+% \resumeItem{\textbf{Physical AI Simulation and Sensor Validation:} Developed NVIDIA Isaac Sim Real2Sim/digital-twin workflows and validated force/torque synchronization, preprocessing, coordinate frames, and manipulation datasets to improve sim-to-real reliability and deployment robustness.}
+
+% \resumeItemListEnd
+
+
+\resumeSubheading
+{\href{https://rosaic.ai/en}{ROSAIC.ai}}{Seoul, South Korea}
+{Physical AI -- Researcher}{July 2026 \textbf{--} Present, Full-time}
+\resumeItemListStart
+\justifying
+
+\resumeItem{\textbf{LG Grasping KPI -- Industrial Cable Manipulation:}
+Developed a ROS~2-based cable-grasping and evaluation framework for the \textbf{NACHI MZ07} with a Robotiq 2F-85 gripper, integrating NACHI HWIF/External Tracking, AFT200 force/torque sensing, TSF-85 tactile sensing, and dual RealSense D455 cameras. Built a \textbf{real-time KPI controller} for robot supervision, multimodal sensor visualization, and grasp-trial logging toward a \textbf{98.5\% grasp-success}.}
+
+\resumeItem{\textbf{Hybrid Dual VFLA:}
+Developed and validated a Doosan (A0509) manipulation framework in NVIDIA Isaac Sim, combining deterministic System~1 nominal control with learned, force-aware System~2 residual corrections; passed shadow-mode and active residual-control validation.}
+
+\resumeItem{\textbf{Vision--Force Ablation -- Franka FR3:}
+Implemented controlled RGB-only and RGB+force architectures, reducing the RGB-only model by \textbf{14.80M parameters (12.14\%)} through force-module removal, with \textbf{11/11 validation tests passed}.}
+
+\resumeItem{\textbf{Multimodal Data Reliability:}
+Identified force/torque timestamp misalignment and implemented synchronization checks and explicit modality configuration across training and inference; consolidated a \textbf{96-episode} simulation dataset for residual learning.}
+
+\resumeItem{\textbf{Franka--NACHI Integration:}
+Demonstrated Franka FR3-to-NACHI MZ07 action execution at \textbf{200~Hz}, completing \textbf{10/10 command chunks}; designed a robot-independent ROS~2 architecture with canonical TCP representations and calibrated transformations.}
+
+\resumeItem{\textbf{Doosan Hardware and Safety Integration:}
+Advancing real-robot integration of the Doosan A0509 with a \textbf{Robotiq 2F-85 Adaptive Gripper}, supported by workspace validation, bounded residual corrections, and force/contact safety supervision.}
+
+\resumeItemListEnd
+
+
+% \resumeItem{\textbf{Multimodal Vision--Language--Force-Action (VLFA) Manipulation:} Researching multimodal foundation-model architectures for contact-rich robotic manipulation by integrating RGB-D observations from Intel RealSense D445, robot proprioception, force/torque sensing, and tactile feedback for contact-aware.}
+
+% \resumeItem{\textbf{Vision--Force Modality Ablation and Architecture Optimization:} Designed controlled RGB-only and RGB+force experiments to quantify the contribution of force sensing; redesigned modality-specific components to enable principled ablation studies, efficient inference, and reliable evaluation of multimodal manipulation policies.}
+
+% \resumeItem{\textbf{Multimodal Manipulation Dataset and Sensor Fusion:} Developed and validated multimodal manipulation data pipelines combining RGB-D vision, force/torque, tactile sensing, robot state, and action trajectories, with emphasis on temporal synchronization, coordinate-frame consistency, sensor calibration, and reliable multimodal supervision.}
+
+% \resumeItem{\textbf{Cross-Robot Physical AI Transfer:} Designed a robot-independent manipulation framework for transferring learned policies between Franka FR3 and NACHI MZ07 manipulators through canonical TCP-pose representations, calibrated coordinate transformations, ROS~2 interfaces, and robot-specific execution adapters.}
+
+% \resumeItem{\textbf{Hybrid VFLA Control and Safe Physical Deployment:} Developed a hybrid architecture that combines learned multimodal action generation with deterministic motion control, force/contact constraints, workspace validation, execution-state supervision, and robot-specific safety mechanisms for reliable real-world manipulation.}
+
+% \resumeItem{\textbf{Real2Sim, Digital Twins, and Sim-to-Real Learning:} Developed NVIDIA Isaac Sim workflows for digital-twin modeling, multimodal synthetic-data generation, manipulation-policy validation, and sim-to-real transfer, establishing a unified simulation-to-hardware experimentation pipeline for physical AI research.}
+
+
+\resumeSubheading
+{\href{https://wens.kumoh.ac.kr/}{WENS Lab}}{Gumi-si, South Korea}
+{Research Assistant -- Deep Learning, ROS 2 \& Physical AI}{March 2024 \textbf{--} July 2026, Full-time}
+\resumeItemListStart
+\justifying
+
+\resumeItem{\textbf{Visual Question Answering Model for Safety Monitoring:} Designed a BLIP-2-based vision-language reasoning pipeline on a custom industrial dataset, achieving 92\% accuracy in safety-risk identification and context-aware caption generation for automated inspection.}
+
+\resumeItem{\textbf{Motion Deblurring Using Lightweight CNNs:} Implemented a real-time motion deblurring model using MobileNetV3 with deformable convolution, improving PSNR by 2.1 dB on GoPro and Koher datasets while maintaining fast edge-device inference at 32 ms/frame.}
+
+\resumeItem{\textbf{Vision-Based Smart Grocery Cart Following System:} Developed a real-time smart grocery cart system using YOLOv11 tracking to detect and continuously follow a specific person, maintaining robust identity tracking in dynamic environments.}
+
+\resumeItem{\textbf{Smart Farming Automation Using UxVs:} Developed a UxV-swarm-based fruit disease segmentation system using YOLOv11, achieving 89\% segmentation accuracy for autonomous crop monitoring and early disease intervention in large orchards.}
+
+% \resumeItem{\textbf{Shared-Backbone Multi-Task Vision Network:} Built a unified multi-task vision model with a shared backbone and task-specific heads for depth estimation, semantic segmentation, and RGB object detection, enabling efficient joint scene understanding.}
+
+\resumeItem{\textbf{Industrial Vision Systems for Quality Inspection:} Developed and deployed computer vision models for TFT-LCD defect segmentation, traffic-light detection, and chemical leakage monitoring, reducing manual inspection time by 60\% and enabling automated quality-assurance workflows.}
+
+\resumeItemListEnd
+
+% \resumeSubheading
+%   {\href{https://wens.kumoh.ac.kr/}{HCAV Research Center}}{Gumi-si, South Korea}
+%   {Researcher -- Physical AI}{March 2026 \textbf{--} July 2026 Full-time}
+% \resumeItemListStart
+%   \resumeItem{\textbf{Shared-Backbone Multi-Task Vision Network:} Built a unified multi-task vision model with a shared backbone and task-specific heads for depth estimation, semantic segmentation, and RGB object detection, enabling efficient joint scene understanding.}
+%   \resumeItem{\textbf{World Model-Based Physical AI Navigation for Unitree Go2:} Developed a world model-driven navigation framework for the Unitree Go2 quadruped robot, leveraging future-state prediction for localization, mapping, and autonomous decision-making in dynamic environments.}
+% \resumeItemListEnd
+% \newpage
+% \resumeSubheading
+%   {\href{https://wens.kumoh.ac.kr/}{WENS Lab}}{Gumi-si, South Korea}
+%   {Research Assistant -- Deep Learning \& ROS 2}{March 2024 \textbf{--} Feb 2026, Full-time}
+% \resumeItemListStart
+%   \resumeItem{\textbf{Visual Question Answering Model for Safety Monitoring:} Designed a BLIP-2-based vision-language reasoning pipeline on a custom industrial dataset, achieving 92\% accuracy in safety-risk identification and context-aware caption generation for automated inspection.}
+
+%   \resumeItem{\textbf{Motion Deblurring Using Lightweight CNNs:} Implemented a real-time motion deblurring model using MobileNetV3 with deformable convolution, improving PSNR by 2.1 dB on GoPro and Koher datasets while maintaining fast edge-device inference at 32 ms/frame.}
+
+%   \resumeItem{\textbf{Vision-Based Smart Grocery Cart Following System:} Developed a real-time smart grocery cart system using YOLOv11 tracking to detect and continuously follow a specific person, maintaining robust identity tracking in dynamic environments.}
+
+%   \resumeItem{\textbf{Smart Farming Automation Using UxVs:} Developed a UxV-swarm-based fruit disease segmentation system using YOLOv11, achieving 89\% segmentation accuracy for autonomous crop monitoring and early disease intervention in large orchards.}
+
+%   % \resumeItem{\textbf{ROS 2-Based Scout Mini Autonomous Tracking Robot:} Designed and implemented a ROS 2-based autonomous Scout Mini mobile robot integrating multi-object tracking for robust real-time target following using vision-based perception.}
+
+%   \resumeItem{\textbf{Industrial Vision Systems for Quality Inspection:} Developed and deployed computer vision models for TFT-LCD defect segmentation, traffic-light detection, and chemical leakage monitoring, reducing manual inspection time by 60\% and enabling automated quality-assurance workflows.}
+% \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+% Publication entry macro: works for both first-author and co-author publications
+\newcommand{\publicationEntry}[5]{%
+  \vspace{1pt}
+  \item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \\
+  \end{tabular*}
+  \if\relax\detokenize{#4}\relax
+    \vspace{-4pt}
+  \else
+    \vspace{-3pt}
+    {\small\textit{Authors: #4}}
+    \vspace{-4pt}
+  \fi
+  \resumeItemListStart
+    #5
+  \resumeItemListEnd
+  \vspace{-4pt}
+}
+
+\section{First-Author International Journals / Conferences}
+\resumeSubHeadingListStart
+
+\publicationEntry
+  {CylinMamba3D}
+  {Under Review}
+  {Pattern Recognition}
+  {}
+  {\justifying
+    \resumeItem{Proposed \textbf{CylinMamba3D}, a cylindrical state-space framework for efficient 3D point-cloud learning using linear-time modeling.}
+    \resumeItem{Developed a Cylindrical 3D Mamba block that integrates a Cylindrical State Space Module (C-SSM) with Local Neighborhood Processing (LNP) to combine geometry-aware token ordering with bidirectional state propagation.}
+  }
+\publicationEntry
+  {SafeVision: VLM Reasoning for Context-Aware Safety Monitoring}
+  {Accepted}
+  {Neurocomputing, Elsevier}
+  {}
+  {\justifying
+    \resumeItem{Proposed \textbf{SafeVision}, a unified vision--language framework for real-time, context-aware safety assessment.}
+    \resumeItem{Integrated a frozen CLIP-ViT encoder with two complementary reasoning modules: a Scene-Aware Reasoner (SAR) for global environmental context and a Region-Focused Neural Reasoner for region-level safety compliance verification.}
+  }
+\publicationEntry
+  {CrossFusionKD}
+  {Under Review}
+  {IEEE Internet of Things Journal}
+  {}
+  {\justifying
+    \resumeItem{Proposed \textbf{CrossFusionKD: A Cross-Modal Knowledge Distillation Framework for UxV Object Detection}.}
+    \resumeItem{Designed a teacher--student distillation framework in which a multi-modal RGB--IR teacher transfers channel-wise knowledge to a lightweight RGB-only student, enabling efficient inference without requiring IR sensors.}
+  }
+
+\publicationEntry
+  {A Vision-Language-Driven UxV System for Safety Monitoring}
+  {Accepted}
+  {\href{https://ieeexplore.ieee.org/abstract/document/11169839}{The 16th International Conference on Ubiquitous and Future Networks -- ICUFN}}
+  {}
+  {\justifying
+    \resumeItem{Proposed a \textbf{Vision-Language-Driven UxV System for Safety Monitoring} using BLIP-2 to generate safety-aware image captions.}
+  }
+
+\resumeSubHeadingListEnd
+
+\section{Publications as Co-Author}
+\resumeSubHeadingListStart
+
+\publicationEntry
+  {EdgeDAM}
+  {Under Review}
+  {Pattern Recognition Journal}
+  {Syed Muhammad Raza, Syed Murtaza Hussain, Dr. Omer Tariq, Muhammad Ibrahim, Ajmal Mian}
+  {\justifying
+    \resumeItem{Proposed \textbf{EdgeDAM: Distractor-Aware Real-Time Object Tracking for Mobile Devices}.}
+    \resumeItem{Developed EdgeDAM, a lightweight mobile-friendly framework for single-object tracking that integrates a fast YOLOv11s detector, the Channel and Spatial Reliability Tracker (CSRT), and an enhanced Distractor-Aware Memory (DAM) module for detection-driven occlusion handling.}
+  }
+
+\publicationEntry
+  {Lightweight Deep Learning for Visual Perception: A Survey}
+  {Accepted}
+  {\href{https://www.sciencedirect.com/science/article/pii/S0925231225020296}{Neurocomputing}}
+  {Syed Muhammad Raza, Syed Murtaza Hussain, Prof. Soo Young Shin}
+  {\justifying
+    \resumeItem{Presented a comprehensive survey of lightweight deep learning models, compression strategies, and deployment challenges for edge-device-based visual perception tasks.}
+  }
+
+\publicationEntry
+  {DSConvNet: A Lightweight Architecture for Extracting Image Features}
+  {Accepted}
+  {\href{https://ieeeaccess.ieee.org/}{IEEE Access}}
+  {Syed Muhammad Raza, Syed Murtaza Hussain, Prof. Soo Young Shin}
+  {\justifying
+    \resumeItem{Proposed \textbf{DSConvNet: A Lightweight Depthwise Separable Convolution Network for Multiclass Image Feature Extraction}.}
+  }
+
+\resumeSubHeadingListEnd
+
+%----------- PROJECTS -----------
+
+% \section{Projects}
+%     \vspace{3pt}
+% \resumeSubHeadingListStart
+% \resumeProjectHeading
+%   {\textbf{ROS 2–Based Autonomous Mobile Robot Simulation with Vision Perception and LiDAR SLAM} $|$ \emph{\href{}{\color{blue}GitHub}}}{}
+%     \resumeItemListStart
+%       \resumeItem{Designed and implemented a custom warehouse \textbf{ROS 2 (Humble) simulation environment} in Gazebo for an autonomous \textbf{Scout Mini–based skid-steer mobile robot}, featuring a fully robot description.}
+%       \resumeItem{Integrated an \textbf{RGB camera sensor} for vision-based perception and real-time visualization, enabling camera data streaming in RViz and supporting downstream vision and object-detection pipelines.}
+%       \resumeItem{Implemented \textbf{LiDAR-based SLAM using slam\_toolbox}, enabling real-time mapping and localization from 2D LiDAR scans and odometry, and incorporated \textbf{keyboard teleoperation} for controlled exploration and map generation.}
+%     \resumeItemListEnd
+% \resumeSubHeadingListEnd
+
+%----------- RELEVANT COURSEWORK -----------
+
+% \section{Relevant Coursework}
+  % \vspace{2pt}
+  % \resumeSubHeadingListStart
+    % \small{\item{
+        % \textbf{Major coursework:}{ Materials Science, Electrical Circuits I-II, Digital System Design, Numerical Methods, Probability Theory, Electronics I-II, Signals and Systems, Electromagnetic Field Theory, Energy Conversion, System Dynamics and Control, Communication Engineering, Pattern Recognition, Introduction to Digital Signal Processing, Introduction to Digital Communications, Introduction to Database Systems, Introduction to Image Processing, Machine Vision} \\ \vspace{3pt}
+        
+        % \textbf{Minor coursework:}{ Discrete Computational Structures, Introduction to Object-Oriented Programming, Data Structures and Algorithms, Computer Organization, Fundamentals of Software Engineering}
+    % }}
+  % \resumeSubHeadingListEnd
+
+
+
+%----------- CERTIFICATES -----------
+
+% \section{Certificates}
+%   \resumeSubHeadingListStart
+    
+%      \resumeOrganizationHeading
+%       {Understanding of Data Engineering}{Mar 2023}{DataCamp}
+    
+%     \resumeOrganizationHeading
+%       {Ai for Everyone}{Oct 2023}{Coursera}
+    
+ % \section{Languages}
+ %  \resumeSubHeadingListStart
+ %     \resumeOrganizationHeading
+ %      {English} {Level: Advanced} {}
+
+ %  \resumeSubHeadingListEnd
+
+
+
+%----------- ORGANIZATIONS -----------
+
+% \section{Organizations}
+  % \resumeSubHeadingListStart
+    
+    % \resumeOrganizationHeading
+      % {Institute of Electrical and Electronics Engineers (IEEE)}{Feb 2022 -- Present}{Student Member}
+    
+  % \resumeSubHeadingListEnd
+
+
+
+%----------- HOBBIES -----------
+
+% \section{Hobbies}
+  % \resumeSubHeadingListStart
+    % \small{\item{Basketball, Swimming, Fitness, Eight-ball, Horology}}
+  % \resumeSubHeadingListEnd
+
+
+
+%----------- REFERENCES -----------
+
+\section{References}
+  \vspace{2pt}
+% \begin{minipage}[t]{0.48\textwidth}
+%     \resumeSubHeadingListStart
+%     \item{\textbf{Soo Young Shin }}
+%     \item {Professor, \\
+%     Kumoh National Institute of Technology, \\
+%     Gumi, South Korea.}
+%     \item {Mail - wdragon@kumoh.ac.kr}
+%     \item {Address - Gumi, 39177, South Korea}
+%     \item {Phone - (054) 478-7468}
+%     \resumeSubHeadingListEnd
+% \end{minipage}%
+%\hfill
+\begin{center}
+\begin{minipage}[t]{0.45\textwidth}
+    \textbf{Dr. Md Masuduzzaman} \\
+    Postdoctoral Research Fellow, \\
+    McMaster University, \\
+    Hamilton, Canada. \\
+    Mail - \texttt{masud.prince@mcmaster.ca} \\
+    Dept. - Degroote School of Business.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+    \textbf{Dr. Muhammad Ibrahim} \\
+    Research Scientist, \\
+    University of Western Australia (UWA). \\
+    Mail - \texttt{Muhammad.ibrahim@dpird.wa.gov.au} \\
+    Dept. - Primary Industry and Regional Development (DPIRD)
+\end{minipage}
+\end{center}
+%-------------------------------------------
+\end{document}
+% \begin{minipage}[t]{0.45\textwidth}
+%     \textbf{Dr. Syed Ali Hassan} \\
+%     Postdoctoral Research Fellow, \\
+%     Aarhus University. \\
+%     Mail - \texttt{ali@btech.au.dk} \\
+%     Dept. - Business Development and Technology
+% \end{minipage}

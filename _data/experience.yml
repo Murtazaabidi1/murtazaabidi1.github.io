@@ -1,0 +1,36 @@
+# Professional experience (most recent first). Source: CV/Murtaza_CV.pdf,
+# owner brief, and project READMEs. Each organisation can hold several roles;
+# each role carries its own points.
+
+- org: ROSAIC.ai
+  url: https://rosaic.ai/en
+  location: Seoul, South Korea
+  logo: /assets/images/badges/rosaic_ai-removebg.png
+  roles:
+    - title: "Physical AI — Model Team Lead"
+      date: Oct 2026 – Present
+      current: true
+      points:
+        - "<strong>Industrial Cable Manipulation:</strong> Developed a ROS 2-based industrial cable-grasping and evaluation framework using the NACHI MZ07 and Robotiq 2F-85, integrating force/torque, tactile, and RGB-D sensing with real-time robot supervision and grasp-performance monitoring."
+        - "<strong>Robot Motion Planning:</strong> Developed a ROS 2 / MoveIt 2 simulation framework for the NACHI MZ07 with unified robot modeling, collision-aware planning, mock trajectory execution, and virtual grasping validation."
+    - title: "Physical AI — Research Scientist"
+      date: Jul 2026 – Sep 2026
+      points:
+        - "<strong>Hybrid Dual VFLA:</strong> built a Doosan E0509 + Robotiq 2F-85 Isaac Sim workcell with RGB and six-axis F/T sensing; implemented deterministic System 1 control, Hybrid supervision, and a bounded residual bridge; trained and shadow-validated the learned System 2."
+        - "<strong>Vision–force analysis:</strong> true RGB-only force ablation (12.14% fewer parameters) and attention-based investigation of multimodal fusion and target-selection failures."
+        - "<strong>Real-robot integration:</strong> executed VFLA policy trajectories on the NACHI MZ07 at 200 Hz (10/10 command chunks) and designed a multi-robot ROS 2 execution architecture."
+        - "<strong>Data reliability:</strong> force/torque synchronization, versioned data contracts, and an audited 96-episode nominal and corrective dataset."
+
+- org: WENS Lab, Kumoh National Institute of Technology
+  url: https://wens.kumoh.ac.kr/
+  location: Gumi-si, South Korea
+  logo: /assets/images/badges/wens.png
+  roles:
+    - title: "Research Assistant — Deep Learning, ROS 2 & Physical AI"
+      date: Mar 2024 – Jul 2026
+      points:
+        - "<strong>VQA for safety monitoring:</strong> BLIP-2-based vision-language pipeline on a custom industrial dataset; 92% accuracy in safety-risk identification."
+        - "<strong>Lightweight motion deblurring:</strong> MobileNetV3 with deformable convolution; +2.1 dB PSNR on GoPro and Koher at 32 ms/frame on edge devices."
+        - "<strong>Person-following grocery cart:</strong> real-time YOLOv11-based tracking to follow a specific person in dynamic environments."
+        - "<strong>Smart farming with UxVs:</strong> UxV-swarm fruit-disease segmentation with YOLOv11; 89% segmentation accuracy."
+        - "<strong>Industrial vision inspection:</strong> TFT-LCD defect segmentation, traffic-light detection, and chemical-leak monitoring; 60% reduction in manual inspection time."

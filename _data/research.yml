@@ -1,0 +1,34 @@
+# Research areas: two columns, six unique topics. Each topic links to exactly one
+# project (id in projects.yml) or publication (slug in _publications/), and each
+# project/publication is linked only once in this section.
+
+groups:
+- title: Robot learning
+  areas:
+  - name: Vision-Language-Force-Action Learning
+    note: Learning force-aware residual manipulation policies.
+    evidence:
+    - { label: Hybrid Dual VFLA, type: project, id: hybrid-vfla }
+  - name: Force-Aware and Contact-Rich Manipulation
+    note: Investigating the contribution of force sensing to robotic manipulation.
+    evidence:
+    - { label: Vision–Force Ablation, type: project, id: vision-force-ablation }
+  - name: Multimodal Robot Learning
+    note: Synchronizing vision, force, and robot-state observations for reliable learning.
+    evidence:
+    - { label: Multimodal Sensor & Dataset Reliability, type: project, id: multimodal-data-reliability }
+
+- title: Robotic systems & 3D perception
+  areas:
+  - name: Industrial Robotic Manipulation
+    note: Real-world cable grasping with industrial robot integration and multimodal sensing.
+    evidence:
+    - { label: LG Grasping KPI, type: project, id: lg-grasping-kpi }
+  - name: Robot Motion Planning and Kinematics
+    note: Unified robot modeling, inverse kinematics, and collision-aware planning.
+    evidence:
+    - { label: NACHI MZ07 + MoveIt 2, type: project, id: nachi-moveit2 }
+  - name: 3D Vision and State-Space Modeling
+    note: Geometry-aware learning and state-space architectures for 3D point clouds.
+    evidence:
+    - { label: CylinMamba3D, type: publication, id: 2026-03-01-cylinmamba3d }

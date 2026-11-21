@@ -5,15 +5,19 @@ authors:
   - "Syed Murtaza Hussain Abidi"
   - "Md Masuduzzaman"
   - "Soo Young Shin"
-venue: "Neurocomputing 2025"
+venue: "Neurocomputing"
+year: 2025
 date: 2025-08-01
-selected: true
-paper_pdf: "/assets/papers/Lightweight Deep Learning for Visual Perception.pdf"
-image: "/assets/images/publications/survey_lightweight_models.png"
-code: ""
-pub_type: "Journal"
-authorship: "2nd Author"
 status: "Accepted"
+pub_type: "Journal"
+authorship: "co"
+selected: false
+image: "/assets/images/publications/survey_lightweight_models.png"
+paper_pdf: "/assets/papers/Lightweight Deep Learning for Visual Perception.pdf"
+external_url: "https://www.sciencedirect.com/science/article/pii/S0925231225020296"
+url_label: "ScienceDirect"
+code: ""
+tags: [Lightweight models, Model compression, Edge AI]
 ---
 
-2nd author. Accepted in Neurocomputing 2025.
+A comprehensive survey of lightweight deep-learning models, compression strategies, and deployment challenges for edge-device visual perception.

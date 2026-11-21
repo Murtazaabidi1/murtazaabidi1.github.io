@@ -8,3 +8,6 @@ vendor/
 Gemfile.lock
 
 .DS_Store
+
+# Internal ROSAIC material — must never reach the public repository
+CV/Murtaza 3-Month-Presentation --English.pdf

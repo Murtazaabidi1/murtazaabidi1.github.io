@@ -1,65 +1,61 @@
+# ---------------------------------------------------------------------------
+# Identity & contact. Factual source: CV/Murtaza_CV.pdf (latest) + owner brief.
+# ---------------------------------------------------------------------------
 primary_name: "Murtaza Hussain"
-secondary_name: ""
+publication_name: "Syed Murtaza Hussain Abidi"   # name as printed on papers
 navbar_name: "Murtaza Hussain"
 
-positions:
-- name: Research Assistant
-- name: Kumoh National Institute of Technology, South Korea
+title: "Physical AI — Model Team Lead"
+company: "ROSAIC.ai"
+company_url: "https://rosaic.ai/en"
+location: "Seoul, South Korea"
 
-
-email: "mrmurtaza.cs@email.com"
-cv_link: /files/Murtaza_CV.pdf
+email: "mrmurtaza.cs@gmail.com"
+cv_link: /CV/Murtaza_CV.pdf
 gscholar: https://scholar.google.com/citations?user=bnPVocQAAAAJ&hl=en
 github: https://github.com/Murtazaabidi1
 linkedin: https://www.linkedin.com/in/murtazahussain0/
-orcid: 0009-0005-3895-5237
-
-
-short_bio_text_justify: false
-short_bio: >-
-  <p>
-  I am an R&D AI Scientist at ROSAIC.ai, where I conduct research on Physical AI and intelligent robotic manipulation. My research focuses on Vision-Language-Action (VLA), Vision-Force-Language-Action (VFLA), PrimitiveVLA, and Physics-Informed VLAs for contact-rich manipulation. I develop multimodal robotic learning systems that integrate vision, force, and tactile sensing, while exploring foundation models, long-horizon manipulation, manipulation-oriented world models, multimodal dataset creation, and sim-to-real learning using NVIDIA Isaac Sim.
-  </p>
+orcid: https://orcid.org/0009-0005-3895-5237
 
 portrait_url: /assets/images/photos/ME.jpeg
-portrait_caption: >-
-  Murtaza Hussain
+portrait_alt: "Portrait of Murtaza Hussain"
 
+intro: >-
+  I am a Physical AI researcher working on intelligent robotic manipulation, multimodal
+  learning, and embodied intelligence. My research focuses on Vision-Language-Action models,
+  force-aware manipulation, and reliable integration of robot-learning systems with real
+  robotic hardware.
+
+# ---------------------------------------------------------------------------
+# Education (from latest CV)
+# ---------------------------------------------------------------------------
 education:
-- name: Kumoh National Institute of Technology, South Korea
+- name: Kumoh National Institute of Technology
+  location: Gumi-si, South Korea
   logo: /assets/images/badges/KIT.jpg
-  position: >- 
-    Department of IT Convergence Engineering<br/>
-    MS. Student
-  date: Mar. 2024 - Feb 2026
-- name: SZABIST University
+  degree: M.S. in IT Convergence Engineering
+  detail: "GPA 4.38 / 4.50"
+  date: Mar 2024 – Feb 2026
+- name: Shaheed Zulfikar Ali Bhutto Institute of Science and Technology (SZABIST)
+  location: Karachi, Pakistan
   logo: /assets/images/badges/szabist.png
-  position: B.S. in Computer Science
-  date: Sep. 2019 - Jul. 2023
+  degree: B.S. in Computer Science
+  detail: "GPA 3.44 / 4.00"
+  date: Sep 2019 – Jun 2023
 
-experience:
-- name: ROSIAC.ai
-  logo: assets/images/badges/rosaic_ai-removebg.png
-  position: AI Research Scientist
-  date: Jul. 2026 - Present
-
-- name: Wens Lab / HCAV
-  logo: assets/images/badges/wens.png
-  position: Researcher
-  date: Mar. 2024 - Jun. 2026
-
+# ---------------------------------------------------------------------------
+# Awards & scholarships (carried over from the previous site; not listed in
+# the current CV — keep this list in sync with the CV when possible).
+# ---------------------------------------------------------------------------
 awards:
-- name: Neurocomputing Paper Acceptance
-  date: 2025
-- name: ICUFN 2025 Conference 
-  date: 2025
-- name: Brain Korea BK21 Scholarship
-  date: 2024-2025
-- name: Best FYP Award (BS)
+- name: Brain Korea 21 (BK21) Scholarship
+  date: 2024 – 2026
+- name: Best Final Year Project Award (B.S.)
+  org: SZABIST
   date: 2023
-- name: Best AI Project at Zab e-fest SZABIST-22
+- name: Best AI Project, Zab e-Fest
+  org: SZABIST
   date: 2022
-- name: ICUFN 2025 Conference 
-  date: 2025
-- name: Merit-based Scholarship from IFTA Trust
-  date: 2021-2023
+- name: Merit-based Scholarship
+  org: IFTA Trust
+  date: 2021 – 2023

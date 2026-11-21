@@ -1,0 +1,32 @@
+{%- comment -%}
+  Publication card.
+  Params: pub (publication document), compact (optional, hides thumbnail + summary)
+{%- endcomment -%}
+{%- assign pub = include.pub -%}
+{%- assign me = site.data.profile.publication_name -%}
+{%- assign status_slug = pub.status | downcase | replace: ' ', '-' -%}
+<article class="pub{% if include.compact %} pub--compact{% endif %}">
+    {% if pub.image and pub.image != "" and include.compact != true %}
+    <div class="pub-thumb">
+        <img src="{{ pub.image | relative_url }}" alt="" loading="lazy" decoding="async">
+    </div>
+    {% endif %}
+    <div class="pub-body">
+        <div class="pub-meta">
+            <span class="badge badge--{{ status_slug }}">{{ pub.status }}</span>
+            <span class="pub-venue"><em>{{ pub.venue }}</em>{% if pub.venue_detail %}, {{ pub.venue_detail }}{% endif %}{% if pub.status != "Under Review" %} · {{ pub.year }}{% endif %}</span>
+        </div>
+        <h3 class="pub-title"><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></h3>
+        <p class="pub-authors">
+            {%- for a in pub.authors -%}
+            {%- if a == me -%}<strong>{{ a }}</strong>{%- else -%}{{ a }}{%- endif -%}{%- unless forloop.last -%}, {% endunless -%}
+            {%- endfor -%}
+        </p>
+        <ul class="pub-links">
+            {% if pub.paper_pdf and pub.paper_pdf != "" %}<li><a href="{{ pub.paper_pdf | relative_url }}" target="_blank" rel="noopener"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i> {{ pub.pdf_label | default: "PDF" }}</a></li>{% endif %}
+            {% if pub.doi %}<li><a href="https://doi.org/{{ pub.doi }}" rel="noopener"><i class="fa-solid fa-link" aria-hidden="true"></i> DOI</a></li>{% endif %}
+            {% if pub.external_url %}<li><a href="{{ pub.external_url }}" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> {{ pub.url_label | default: "Publisher" }}</a></li>{% endif %}
+            {% if pub.code and pub.code != "" %}<li><a href="{{ pub.code }}" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a></li>{% endif %}
+        </ul>
+    </div>
+</article>

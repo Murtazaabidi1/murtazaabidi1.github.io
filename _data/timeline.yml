@@ -1,0 +1,108 @@
+# Journey & Highlights — homepage event timeline.
+#
+# Rendered newest-first (sorted by `date`, so file order does not matter).
+# The timeline starts at the BK21 Scholarship (2024), per the owner (2026-11-21).
+# Earlier milestones (B.S. 2023, SZABIST awards) remain in Education & Awards.
+# Add only verified events; record the evidence in a comment next to each entry.
+#
+# Fields
+#   date          required  "YYYY-MM" (shown as "October 2026") or "YYYY" when
+#                           only the year is known (shown as "2023")
+#   title         required  short event title
+#   category      required  education | career | research | conference |
+#                           publication | award | activity
+#   organization  optional  institution, company, venue, or event name
+#   location      optional  city, country
+#   description   optional  one short sentence (do not repeat full job descriptions)
+#   link          optional  { url: "...", label: "..." } — event / conference website,
+#                           paper DOI, etc. Internal links start with "/".
+#   image         optional  { src: "/assets/...", alt: "..." } small photo or logo
+#
+# Template for future entries (only add once the event is confirmed):
+# - date: "2027-05"
+#   title: "Attended ICRA 2027"
+#   category: conference
+#   organization: "IEEE International Conference on Robotics and Automation"
+#   location: "City, Country"
+#   description: "Presented …"
+#   link: { url: "https://…", label: "Conference website" }
+
+# --- Conferences & events ----------------------------------------------------
+# Source: owner confirmation (2026-11-21): attended IRBC 2026, 4–6 Nov 2026.
+# Official listings (eng.robotworld.or.kr; event-us.kr/irbc2026) place IRBC 2026
+# within ROBOTWORLD 2026 at KINTEX, Goyang (Seoul metropolitan area); conference
+# sessions 4–5 Nov, exhibition 4–7 Nov. Attendance only: no talk or poster claimed.
+- date: "2026-11"
+  title: "Attended IRBC 2026"
+  category: conference
+  organization: "International Robot Business Conference · ROBOTWORLD 2026"
+  location: "KINTEX, Goyang (Seoul area), South Korea"
+  description: "Robotics industry conference on robot business, manufacturing, and Physical AI, 4–6 November 2026."
+  link: { url: "https://eng.robotworld.or.kr/", label: "Event website" }
+
+# --- Career -----------------------------------------------------------------
+# Source: owner brief (internal promotion, Oct 2026); _data/experience.yml.
+- date: "2026-10"
+  title: "Promoted to Physical AI — Model Team Lead"
+  category: career
+  organization: "ROSAIC.ai"
+  location: "Seoul, South Korea"
+
+# Source: CV/main.tex — ROSAIC.ai, July 2026 – Present.
+- date: "2026-07"
+  title: "Joined ROSAIC.ai"
+  category: career
+  organization: "ROSAIC.ai"
+  location: "Seoul, South Korea"
+  description: "Physical AI — Research Scientist, working on vision–force robot learning and real-robot integration."
+
+# Source: CV/main.tex — WENS Lab, Research Assistant, March 2024 – July 2026.
+# (HCAV appears only in a commented-out CV line, so it is not named here.)
+- date: "2024-03"
+  title: "Joined WENS Lab as Research Assistant"
+  category: research
+  organization: "WENS Lab, Kumoh National Institute of Technology"
+  location: "Gumi-si, South Korea"
+  description: "Started M.S. studies and research in deep learning, ROS 2, and Physical AI."
+
+# --- Education --------------------------------------------------------------
+# Source: CV/main.tex — M.S., March 2024 – February 2026, GPA 4.38/4.50.
+- date: "2026-02"
+  title: "Graduated — M.S. in IT Convergence Engineering"
+  category: education
+  organization: "Kumoh National Institute of Technology"
+  location: "Gumi-si, South Korea"
+  description: "Graduated with a GPA of 4.38 / 4.50."
+
+# --- Publications (first-author, published; dates from the papers) ----------
+# Source: assets/papers/FR.pdf — "Published: 12 January 2026".
+- date: "2026-01"
+  title: "Face-recognition review published"
+  category: publication
+  organization: "Electronics (MDPI)"
+  description: "First-author review of feature extraction and dataset evaluation in face recognition."
+  link: { url: "/publications/2026-01-12-FR.html", label: "Paper details" }
+
+# Source: assets/papers/SafeVision.pdf — "Available online 19 December 2025".
+- date: "2025-12"
+  title: "SafeVision published"
+  category: publication
+  organization: "Neurocomputing"
+  description: "First-author paper on vision–language reasoning for context-aware safety monitoring."
+  link: { url: "/publications/2026-01-05-safevision.html", label: "Paper details" }
+
+# Source: assets/papers/VLM.pdf — ICUFN 2025 proceedings (year only; month and
+# physical attendance not verified, so this is a publication, not a conference visit).
+- date: "2025"
+  title: "First conference paper published"
+  category: publication
+  organization: "ICUFN 2025 (IEEE)"
+  description: "Vision-language-driven UxV system for safety monitoring."
+  link: { url: "/publications/2025-03-01-vlm.html", label: "Paper details" }
+
+# --- Awards (from the site's Awards list; year precision only) ---------------
+# Source: _data/profile.yml awards (not listed in the current CV).
+- date: "2024"
+  title: "Brain Korea 21 (BK21) Scholarship"
+  category: award
+  description: "Graduate research scholarship, 2024 – 2026."

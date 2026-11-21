@@ -1,35 +1,212 @@
 ---
 layout: default
-title : Homepage
+title: Home
 navbar_title: Home
 ---
+{%- assign p = site.data.profile -%}
 
-<div class="row">
-    <div class="col-lg-3 col-md-4">
-        {% include widgets/profile_card_mini.html %}
+<!-- Hero -->
+<section class="hero">
+    <div class="container hero-grid">
+        <div class="hero-text">
+            <p class="eyebrow">{{ p.location }}</p>
+            <h1 class="hero-name">{{ p.primary_name }}</h1>
+            <p class="hero-role">{{ p.title }} <span class="sep" aria-hidden="true">|</span> <a href="{{ p.company_url }}" rel="noopener">{{ p.company }}</a></p>
+            <p class="hero-intro">{{ p.intro }}</p>
+            <div class="hero-actions">
+                <a class="btn btn--primary" href="{{ p.cv_link | relative_url }}" target="_blank" rel="noopener"><i class="fa-regular fa-file-lines" aria-hidden="true"></i> Curriculum Vitae</a>
+                <a class="btn" href="{{ '/projects.html' | relative_url }}">Research Projects</a>
+                <a class="btn" href="{{ '/publications.html' | relative_url }}">Publications</a>
+            </div>
+            {% include components/social-links.html %}
+        </div>
+        <figure class="hero-portrait">
+            <img src="{{ p.portrait_url | relative_url }}" alt="{{ p.portrait_alt }}" width="496" height="638" fetchpriority="high">
+        </figure>
     </div>
-    <div class="col-lg-9 col-md-8">
+</section>
 
-        {% include widgets/profile_card_bio_only.html %}
-
-        <!-- Debugging widgets -->
-        {% include widgets/debug_repo_name.html %}
-        {% include widgets/debug_url.html %}
-
-        {% if site.data.display.homepage.show_experience %}
-            {% include widgets/experience_card.html %}
-        {% endif %}
-
-        <!-- {% if site.data.display.homepage.show_news %}
-        {% assign count_news = site.news | size %}
-        {% if count_news > 0 %}
-        {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
-        {% endif %}
-        {% endif %} -->
-
-       {% if site.data.display.homepage.show_selected_publications %}
-      {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true | slice: 0, 3 %}
-      {% include widgets/publication_card.html publications=pubs title='Selected Publications' %}
-    {% endif %}
+<!-- Research interests -->
+<section class="section" id="research" aria-labelledby="research-h">
+    <div class="container">
+        <header class="section-head">
+            <h2 id="research-h">Research</h2>
+            <p>Machine learning for physical interaction, grounded in hands-on robotic systems. Each area links to the work behind it.</p>
+        </header>
+        <div class="research-grid">
+            {% for g in site.data.research.groups %}
+            <div class="research-col">
+                <h3 class="research-col-title"><span class="dot{% if forloop.first %} dot--solid{% endif %}" aria-hidden="true"></span> {{ g.title }}</h3>
+                <ul class="research-list">
+                    {% for r in g.areas %}
+                    <li>
+                        <span class="research-name">{{ r.name }}</span>
+                        <span class="research-note">{{ r.note }}</span>
+                        <span class="research-evidence">
+                            {% for e in r.evidence %}
+                            {%- if e.type == "project" -%}
+                            <a href="{{ '/projects.html' | relative_url }}#{{ e.id }}">{{ e.label }}</a>
+                            {%- else -%}
+                            <a href="{{ '/publications/' | append: e.id | append: '.html' | relative_url }}">{{ e.label }}</a>
+                            {%- endif -%}
+                            {%- unless forloop.last %} · {% endunless -%}
+                            {% endfor %}
+                        </span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-</div>
+</section>
+
+<!-- Robotics platforms & technical expertise -->
+<section class="section section--alt" id="platforms" aria-labelledby="platforms-h">
+    <div class="container">
+        <header class="section-head">
+            <h2 id="platforms-h">Robotics Platforms &amp; Technical Expertise</h2>
+            <p>Hardware and software I have worked with hands-on. Project-level results and validation status are on the <a href="{{ '/projects.html' | relative_url }}">Projects page</a>.</p>
+        </header>
+        <div class="expertise-cards">
+            {% for c in site.data.platforms.cards %}
+            <div class="expertise-card">
+                <h3><i class="fa-solid fa-{{ c.icon }}" aria-hidden="true"></i> {{ c.title }}</h3>
+                <ul>{% for it in c.items %}<li>{{ it }}</li>{% endfor %}</ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Featured projects -->
+<section class="section" id="projects" aria-labelledby="projects-h">
+    <div class="container">
+        <header class="section-head section-head--row">
+            <div>
+                <h2 id="projects-h">Featured Research Projects</h2>
+                <p>Robot-learning and robotic-systems work at ROSAIC.ai. Select a project for its results, validation status, and limitations.</p>
+            </div>
+            <a class="link-more" href="{{ '/projects.html' | relative_url }}">All project details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </header>
+        <div class="project-grid">
+            {% assign featured = site.data.projects | where: "featured", true %}
+            {% for pr in featured %}
+                {% include components/project-card.html project=pr %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Experience -->
+<section class="section section--alt" id="experience" aria-labelledby="experience-h">
+    <div class="container">
+        <header class="section-head">
+            <h2 id="experience-h">Experience</h2>
+        </header>
+        <ol class="timeline">
+            {% for x in site.data.experience %}
+            <li class="timeline-item">
+                <div class="timeline-logo">
+                    {% if x.logo %}<img src="{{ x.logo | relative_url }}" alt="" loading="lazy" width="48" height="48">{% endif %}
+                </div>
+                <div class="timeline-body">
+                    <h3 class="timeline-org">{% if x.url %}<a href="{{ x.url }}" rel="noopener">{{ x.org }}</a>{% else %}{{ x.org }}{% endif %}</h3>
+                    <p class="timeline-loc">{{ x.location }}</p>
+                    <ul class="roles">
+                        {% for r in x.roles %}
+                        <li class="role{% if r.current %} role--current{% endif %}">
+                            <div class="role-head">
+                                <span class="role-title">{{ r.title }}</span>
+                                <span class="role-date">{{ r.date }}</span>
+                            </div>
+                            {% if r.points %}
+                            <ul class="timeline-points">
+                                {% for pt in r.points %}<li>{{ pt }}</li>{% endfor %}
+                            </ul>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+</section>
+
+<!-- Journey & highlights -->
+<section class="section" id="journey" aria-labelledby="journey-h">
+    <div class="container">
+        <header class="section-head">
+            <h2 id="journey-h">Journey &amp; Highlights</h2>
+            <p>Selected moments from my academic, research, and professional journey.</p>
+        </header>
+        {% include components/journey.html %}
+    </div>
+</section>
+
+<!-- Selected publications -->
+<section class="section" id="publications" aria-labelledby="pubs-h">
+    <div class="container">
+        <header class="section-head section-head--row">
+            <div>
+                <h2 id="pubs-h">Selected Publications</h2>
+            </div>
+            <a class="link-more" href="{{ '/publications.html' | relative_url }}">All publications <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </header>
+        {% assign pubs = site.publications | where: "selected", true | sort: "date" | reverse %}
+        <div class="pub-list">
+            {% for pub in pubs %}
+                {% include components/pub-card.html pub=pub %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Education & awards -->
+<section class="section" id="education" aria-labelledby="edu-h">
+    <div class="container edu-grid">
+        <div>
+            <h2 id="edu-h">Education</h2>
+            <ul class="edu-list">
+                {% for e in p.education %}
+                <li class="edu-item">
+                    <img src="{{ e.logo | relative_url }}" alt="" loading="lazy" width="44" height="44">
+                    <div>
+                        <h3>{{ e.degree }}</h3>
+                        <p class="edu-school">{{ e.name }}, {{ e.location }}</p>
+                        <p class="edu-meta">{{ e.date }}{% if e.detail %} · {{ e.detail }}{% endif %}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            <h2>Awards &amp; Scholarships</h2>
+            <ul class="award-list">
+                {% for a in p.awards %}
+                <li>
+                    <span class="award-name">{{ a.name }}{% if a.org %} <span class="award-org">· {{ a.org }}</span>{% endif %}</span>
+                    <span class="award-date">{{ a.date }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="section section--contact" id="contact" aria-labelledby="contact-h">
+    <div class="container contact">
+        <div>
+            <h2 id="contact-h">Contact</h2>
+            <p>I am happy to discuss research collaborations in Physical AI, robot learning, and multimodal manipulation.</p>
+            <p class="contact-email"><a href="mailto:{{ p.email }}">{{ p.email }}</a></p>
+        </div>
+        <div class="contact-side">
+            <a class="btn btn--primary" href="{{ p.cv_link | relative_url }}" target="_blank" rel="noopener"><i class="fa-solid fa-download" aria-hidden="true"></i> Download CV (PDF)</a>
+            {% include components/social-links.html %}
+        </div>
+    </div>
+</section>

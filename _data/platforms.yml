@@ -1,0 +1,18 @@
+# Robotics Platforms & Technical Expertise — four compact cards on the homepage.
+# This section lists hands-on hardware/software experience only. Project-level
+# validation status and results live in projects.yml / the Projects page.
+# `icon` is a Font Awesome 6 solid icon name (rendered in a neutral colour).
+
+cards:
+- title: Robotic Platforms
+  icon: robot
+  items: [NACHI MZ07, Doosan A0509, Franka FR3, Scout Mini, Holybro X500]
+- title: Sensors & End Effectors
+  icon: hand
+  items: [Robotiq 2F-85, AFT200 six-axis force/torque sensor, TSF-85 tactile sensing, Intel RealSense D455, RGB-D sensing, Robot proprioception]
+- title: Simulation & Motion Planning
+  icon: cube
+  items: [NVIDIA Isaac Sim, MuJoCo, MoveIt 2, RViz2, OMPL, Pilz motion planning]
+- title: Robotics Frameworks & Development
+  icon: code
+  items: [ROS 2, ros2_control, URDF / Xacro, Python, C++, Robot kinematics, Trajectory planning]

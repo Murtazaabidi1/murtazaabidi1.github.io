@@ -5,15 +5,18 @@ authors:
   - "Syed Muhammad Raza"
   - "Md Masuduzzaman"
   - "Soo Young Shin"
-venue: "Knowledge-Based Systems"
+venue: "IEEE Internet of Things Journal"
+year: 2026
 date: 2026-01-04
-selected: true
-paper_pdf: "/assets/papers/CrossKD.pdf"
-image: "/assets/images/publications/crosskd.png"
-code: ""
-pub_type: "Journal"
-authorship: "1st Author"
 status: "Under Review"
+pub_type: "Journal"
+authorship: "first"
+selected: true
+image: "/assets/images/publications/crosskd.png"
+paper_pdf: "/assets/papers/CrossKD.pdf"
+pdf_label: "Preprint"
+code: ""
+tags: [Knowledge distillation, RGB–IR, Object detection]
 ---
 
-1st author. Submitted to Knowledge-Based Systems.
+A teacher–student distillation framework in which a multi-modal RGB–IR teacher transfers channel-wise knowledge to a lightweight RGB-only student, enabling efficient inference without IR sensors.

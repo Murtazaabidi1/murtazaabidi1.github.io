@@ -1,24 +1,25 @@
 ---
 layout: default
-title: Projects
+title: Research Projects
 navbar_title: Projects
+description: "Physical AI research projects by Murtaza Hussain: industrial cable manipulation, MoveIt 2 motion planning, force-aware VFLA manipulation, vision–force ablation, cross-robot integration, and multimodal data reliability."
 ---
-
-<div class="row">
-  <div class="col-12">
-    <h2>Projects</h2>
-    <p>Selected research and engineering projects.</p>
-  </div>
-</div>
-
-{% assign grouped_projects = site.showcase | where: "show", true | sort: "date" | reverse %}
-{% for item in grouped_projects %}
-  <div class="card mt-3">
-    <div class="card-body">
-      <h4 class="card-title">{{ item.title }}</h4>
-      <div class="card-text">
-        {{ item.content }}
-      </div>
+<section class="page-head">
+    <div class="container">
+        <h1>Research Projects</h1>
+        <p class="lead">Physical AI and robot-learning systems developed at ROSAIC.ai. Each project states where its results come from: physical hardware, simulation or mock execution, a controlled study, or an interface test.</p>
+        <ul class="legend" aria-label="Status legend">
+            <li><span class="pill pill--real">Demonstrated on hardware</span> executed on the physical robot</li>
+            <li><span class="pill pill--sim">Simulation-validated</span> NVIDIA Isaac Sim or MoveIt 2 mock execution</li>
+            <li><span class="pill pill--ongoing">In progress</span> work not yet completed or reported</li>
+        </ul>
     </div>
-  </div>
-{% endfor %}
+</section>
+
+<section class="section section--tight">
+    <div class="container project-stack">
+        {% for pr in site.data.projects %}
+            {% include components/project-card.html project=pr detailed=true %}
+        {% endfor %}
+    </div>
+</section>

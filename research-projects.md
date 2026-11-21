@@ -1,19 +1,16 @@
 ---
-layout: default
-title: Research Projects
-navbar_title: Research Projects
-container_class: container-xl
+layout: null
+permalink: /research-projects.html
+sitemap: false
 ---
-
-# Research Projects
-
-{% assign projects = site.showcase | where: "show", true | sort: "date" | reverse %}
-
-{% for item in projects %}
-<div class="card mt-3">
-  <div class="card-body">
-    <h4>{{ item.title }}</h4>
-    {{ item.content | markdownify }}
-  </div>
-</div>
-{% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Research Projects — Murtaza Hussain</title>
+<link rel="canonical" href="{{ '/projects.html' | absolute_url }}">
+<meta http-equiv="refresh" content="0; url={{ '/projects.html' | relative_url }}">
+<meta name="robots" content="noindex">
+</head>
+<body><p>This page has moved to <a href="{{ '/projects.html' | relative_url }}">Research Projects</a>.</p></body>
+</html>

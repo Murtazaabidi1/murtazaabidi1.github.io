@@ -1,0 +1,199 @@
+# ---------------------------------------------------------------------------
+# Featured research projects (rendered in this order). Add a project by
+# appending an entry.
+#
+# Fields
+#   id           anchor id (used in URLs: /projects.html#<id>)
+#   title        project name
+#   tagline      one-line subtitle
+#   featured     true → shown on the homepage
+#   card_summary homepage card text (~30–45 words, plain language)
+#   card_platform homepage card platform line
+#   status       list of { label, kind }  kind: real | sim | ongoing | info
+#   objective    technical objective (projects page)
+#   highlights   implementation bullets (projects page; may contain <strong>)
+#   results      key-result notes / status distinctions (projects page)
+#   pipeline     optional list of stage names, shown as a flow (projects page only)
+#   platform     robots / platforms
+#   sensors      optional, sensors and end effectors
+#   stack        frameworks and technologies
+#   metrics      list of { value, label }  — only documented results
+#   note         evaluation-context caveat (projects page only)
+#   image        optional { src, alt } — only authorised, non-confidential images
+#   links        optional list of { label, url } — only public links
+#   confidential true → shows the "source code is private" notice
+#
+# CONFIDENTIALITY: LG Grasping KPI, NACHI MoveIt 2 and Hybrid VFLA are private
+# repositories. Never add source links, internal IPs, proprietary assets, or
+# upstream robot meshes/CAD (NACHI mesh redistribution is unconfirmed).
+# ---------------------------------------------------------------------------
+
+- id: lg-grasping-kpi
+  title: "LG Grasping KPI"
+  tagline: "Industrial cable manipulation"
+  featured: true
+  card_summary: >-
+    Developed a ROS 2-based cable-grasping system on the physical NACHI MZ07, integrating multimodal sensing and a real-time dashboard for grasp monitoring and evaluation.
+  card_platform: "NACHI MZ07 · Robotiq 2F-85"
+  confidential: true
+  status:
+    - { label: "Completed", kind: real }
+    - { label: "Real-robot validated", kind: real }
+  objective: >-
+    Build a supervised, instrumented cable-grasping cell on the industrial NACHI MZ07 and evaluate grasp
+    success on real hardware.
+  highlights:
+    - "Supervised cable-grasp sequence executed on the physical NACHI MZ07: approach, close with contact check, lift and hold, retention check, release, and automatic return to HOME."
+    - "Robotiq 2F-85 integration with status monitoring and interlocked open/close commands."
+    - "Synchronized observation: AFT200 force/torque at 200 Hz, TSF-85 tactile visualization, and wrist + overhead RealSense D455 RGB-D streams."
+    - "Real-time web dashboard for robot supervision, sensor monitoring, trial control, and per-trial evaluation records."
+    - "ROS 2 integration through the NACHI HWIF / External Tracking interface with safety-gated, supervised execution."
+  platform: [NACHI MZ07, NACHI FD Controller]
+  sensors: [Robotiq 2F-85, AFT200 six-axis F/T, TSF-85 tactile, 2× RealSense D455]
+  stack: [ROS 2, NACHI NKR ROS 2 API, HWIF / External Tracking, Python, C++, KPI dashboard]
+  # 94.5% is the owner-confirmed final result (2026-11-21). Do not add trial counts
+  # or evaluation conditions unless the owner provides them.
+  metrics:
+    - { value: "94.5%", label: "Grasp-success rate" }
+
+- id: nachi-moveit2
+  title: "NACHI MZ07 + MoveIt 2"
+  tagline: "Motion planning and virtual grasping"
+  featured: true
+  card_summary: >-
+    Developed a ROS 2 / MoveIt 2 framework for collision-aware motion planning, mock trajectory execution, and virtual cable-grasping demonstrations.
+  card_platform: "NACHI MZ07 · MoveIt 2 (Simulation)"
+  confidential: true
+  status:
+    - { label: "Simulation-validated", kind: sim }
+  objective: >-
+    Provide a collision-aware ROS 2 Humble / MoveIt 2 planning and virtual-grasping environment for the NACHI MZ07
+    with a Robotiq 2F-85, ahead of physical integration.
+  highlights:
+    - "Unified NACHI MZ07-01, custom cylindrical adapter, and Robotiq 2F-85 description in URDF/Xacro, with joint and coordinate-frame modeling."
+    - "Inverse kinematics and collision-aware planning with self- and environment-collision checking (OMPL and Pilz Cartesian planners)."
+    - "Virtual gripper open/close and joint-trajectory execution on ros2_control mock hardware."
+    - "Offline trajectory validation, versioned plan export, and fault-injection and regression testing."
+  pipeline: [HOME, PRE_GRASP, APPROACH, CLOSE, LIFT, TRANSFER, LOWER, OPEN, RETRACT, HOME_RETURN]
+  pipeline_note: "Virtual grasp: the cable is attached to the gripper kinematically in the planning scene. Contact, friction, and cable dynamics are not simulated."
+  platform: [NACHI MZ07-01 (simulated model), Robotiq 2F-85 (simulated model), Custom cylindrical adapter]
+  sensors: ["TSF-85 tactile — future integration, not modeled"]
+  stack: [ROS 2 Humble, MoveIt 2, RViz2, ros2_control, OMPL, Pilz, URDF / Xacro, Python]
+  metrics:
+    - { value: "627 / 0", label: "automated test results / failures" }
+    - { value: "5/5", label: "complete mock grasp sequences" }
+    - { value: "≤ 0.085 mm", label: "mock-execution TCP endpoint error" }
+
+- id: hybrid-vfla
+  title: "Hybrid Dual VFLA"
+  tagline: "Force-aware robotic manipulation"
+  featured: true
+  card_summary: >-
+    Developed a dual-system manipulation framework: deterministic System 1 control with bounded, force-aware System 2 residual corrections, safety supervision, and live RGB and force/torque monitoring in NVIDIA Isaac Sim.
+  card_platform: "Doosan E0509 · NVIDIA Isaac Sim"
+  confidential: true
+  status:
+    - { label: "Simulation-validated", kind: sim }
+  objective: >-
+    Combine a validated deterministic controller with learned, bounded force-aware corrections for contact-rich
+    fixture seating, without giving up the safety of the nominal motion.
+  highlights:
+    - "<strong>System 1</strong>: deterministic nominal control that completes the placement on its own."
+    - "<strong>System 2</strong>: learned force-aware policy (FMT, trained on RGB + six-axis F/T) that proposes residual corrections to the nominal trajectory."
+    - "<strong>Residual bridge, supervisor, and safety layer</strong>: contact-state arbitration, bounded corrective actions in the tool frame, and independent safety checks; observation and action interfaces pinned by versioned contracts."
+    - "<strong>Isaac Sim workcell</strong>: Doosan E0509 + Robotiq 2F-85 with two RGB streams and six-axis F/T, PhysX contact, and fixture-seating detection."
+    - "<strong>Hybrid monitor</strong>: live RGB views, F/T graphs, robot and control state, and contact status during simulated execution."
+    - "<strong>Corrective-teacher recovery</strong> under X/Y/yaw misalignment, used to generate demonstrations for learning System 2."
+    - "Integration of the physical Doosan A0509 (a separate platform from the simulated E0509) is in progress."
+  metrics:
+    - { value: "50/50", label: "successful nominal System 1 demonstrations" }
+    - { value: "500", label: "FMT training epochs; shadow inference passed" }
+    - { value: "±1.5 mm · ±2.0 mm · ±3°", label: "teacher-recovery envelope (X · Y · yaw)" }
+  results:
+    - "Zero-residual execution reproduces System 1 byte-identically; supervisor, residual bridge, and safety layer were tested with a mock System 2."
+    - "As of the October 2026 review, the trained System 2 ran in shadow mode with zero execution authority. Learned corrective execution is the next milestone."
+  platform: [Doosan E0509 (NVIDIA Isaac Sim), Robotiq 2F-85 (simulated)]
+  sensors: [2× RGB cameras (simulated), Six-axis force/torque (simulated)]
+  stack: [VFLA, Residual learning, System 1 / System 2, Isaac Sim, PhysX, PyTorch]
+
+- id: vision-force-ablation
+  title: "Vision–Force Ablation"
+  tagline: "RGB-only vs. RGB+force · multimodal interpretability"
+  featured: true
+  card_summary: >-
+    Built a true RGB-only VFLA baseline by removing force modules, compared it with RGB+force, and used attention analysis to diagnose an incorrect target-selection failure.
+  card_platform: "Franka FR3 · Vision–Force Learning"
+  status:
+    - { label: "Controlled study", kind: info }
+  objective: >-
+    Establish a verified vision–force baseline: measure what force input actually contributes, confirm how image and
+    force signals are processed, and explain policy failures.
+  highlights:
+    - "<strong>True force ablation</strong>: added explicit force on/off control and removed force modules from the RGB-only model, instead of zero-filling F/T inputs; validated both configurations and checkpoint compatibility."
+    - "<strong>Architecture investigation</strong>: traced DINOv2 visual encoding and image–force cross-attention, and verified token dimensions and action sensitivity."
+    - "<strong>Findings</strong>: attention collapse under high-force observations, padding leakage, and preprocessing inconsistencies between data collection, training, and deployment; corrective tasks distributed across the VFLA team to stabilize the baseline."
+    - "<strong>Failure analysis</strong>: in a plug-insertion task, the policy selected the wrong socket. Built architecture and attention visualizations to trace visual processing and diagnose the incorrect target selection."
+  metrics:
+    - { value: "14.80M", label: "parameters removed (12.14%): 121.96M → 107.16M" }
+    - { value: "11/11", label: "ablation validation tests passed" }
+    - { value: "1,024 + 8", label: "image + force tokens verified" }
+    - { value: "427/427", label: "checkpoint tensors loaded (RGB+force)" }
+  results:
+    - "Both configurations trained for 500 epochs; task success is evaluated separately."
+    - "The target-selection failure was diagnosed; its correction has not yet been verified."
+  platform: [Franka FR3]
+  sensors: [RGB, Force/torque]
+  stack: [VFLA, DINOv2, Cross-attention, Ablation study, Attention visualization, PyTorch]
+
+- id: franka-nachi-integration
+  title: "Franka–NACHI Integration"
+  tagline: "Real-robot execution and multi-robot architecture"
+  featured: true
+  card_summary: >-
+    Executed VFLA policy-generated trajectories on the real NACHI MZ07 through ROS 2 pose conversion, chunked 200 Hz command transport, and feedback re-anchoring; designed a reusable multi-robot execution architecture.
+  card_platform: "Franka FR3 · NACHI MZ07"
+  status:
+    - { label: "Real-robot execution", kind: real }
+  objective: >-
+    Run VFLA policy actions, generated in Franka conventions, on the industrial NACHI MZ07, and define a
+    robot-independent architecture for future robot integration.
+  highlights:
+    - "<strong>Command integration</strong>: converted Franka pose7 to NACHI pose6, implemented ROS 2 command-chunk transport and sequencing, and re-anchored trajectories on live robot-state feedback."
+    - "<strong>Hardware validation</strong>: 200 Hz (5 ms) execution gated by NACHI HWIF safety; staged supervised runs of 4, 6, 8, and 10 chunks."
+    - "<strong>Fault investigation</strong>: diagnosed queue and restart issues and the E1998 controller fault; improved retry handling, command freshness, and activation."
+    - "<strong>Multi-robot architecture (design)</strong>: canonical observation contracts, robot-independent action representation, an execution manager, robot-specific adapters, and shared validation and safety interfaces in ROS 2, with an implementation roadmap."
+  metrics:
+    - { value: "10/10", label: "command chunks · 800/800 ticks executed" }
+    - { value: "200 Hz", label: "command interface with HWIF safety gating" }
+    - { value: "≈106.5 ms", label: "observed target-to-feedback tracking lag" }
+  results:
+    - "Results measure command execution and controller tracking, not manipulation task success."
+    - "Longer trajectories still triggered the E1998 controller fault."
+    - "The multi-robot architecture is a delivered design and roadmap, not yet a fully implemented platform."
+  platform: [NACHI MZ07, Franka FR3 (action source)]
+  stack: [ROS 2, NACHI HWIF, Pose conversion, Chunked command transport, Robot adapters]
+
+- id: multimodal-data-reliability
+  title: "Multimodal Sensor & Dataset Reliability"
+  tagline: "Reproducible robot-learning infrastructure"
+  featured: true
+  card_summary: >-
+    Built reproducible multimodal robot-learning data: force/torque synchronization checks, versioned observation and action contracts, and an audited 96-episode nominal and corrective simulation dataset.
+  card_platform: "NVIDIA Isaac Sim · Multimodal Robot Learning"
+  status:
+    - { label: "Infrastructure", kind: info }
+  objective: >-
+    Make multimodal training data trustworthy: synchronized, causal, consistently configured, and reproducible
+    from collection to training.
+  highlights:
+    - "Identified force/torque timestamp misalignment and added synchronization checks."
+    - "Introduced explicit modality configuration shared across training and inference."
+    - "Pinned observation/action contracts and training artifacts with versioning."
+    - "Collected nominal and corrective-recovery demonstrations with explicit train/validation splits; audited causality and kept privileged teacher state out of model inputs."
+  metrics:
+    - { value: "96", label: "simulation episodes: 50 nominal + 46 corrective" }
+    - { value: "46/46", label: "corrective episodes fully seated (40 train / 6 val)" }
+    - { value: "21/21", label: "dataset audit checks passed" }
+  platform: [NVIDIA Isaac Sim]
+  sensors: [RGB, Force/torque]
+  stack: [Sensor synchronization, Data contracts, Dataset auditing, Reproducibility]

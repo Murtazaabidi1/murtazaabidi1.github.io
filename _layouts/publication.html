@@ -1,0 +1,30 @@
+---
+layout: default
+navbar_title: Publications
+---
+{%- assign me = site.data.profile.publication_name -%}
+<article class="page-head pub-detail">
+    <div class="container narrow">
+        <p class="eyebrow"><a href="{{ '/publications.html' | relative_url }}"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Publications</a></p>
+        <h1>{{ page.title }}</h1>
+        <p class="pub-authors">
+            {%- for a in page.authors -%}
+            {%- if a == me -%}<strong>{{ a }}</strong>{%- else -%}{{ a }}{%- endif -%}{%- unless forloop.last -%}, {% endunless -%}
+            {%- endfor -%}
+        </p>
+        <p class="pub-meta">
+            <span class="badge badge--{{ page.status | downcase | replace: ' ', '-' }}">{{ page.status }}</span>
+            <span class="pub-venue"><em>{{ page.venue }}</em>{% if page.venue_detail %}, {{ page.venue_detail }}{% endif %}{% if page.status != "Under Review" %} · {{ page.year }}{% endif %}</span>
+        </p>
+        {% if page.image and page.image != "" %}
+        <figure class="pub-figure"><img src="{{ page.image | relative_url }}" alt="Overview figure for {{ page.title | escape }}"></figure>
+        {% endif %}
+        <div class="prose">{{ content }}</div>
+        <ul class="pub-links">
+            {% if page.paper_pdf and page.paper_pdf != "" %}<li><a href="{{ page.paper_pdf | relative_url }}" target="_blank" rel="noopener"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i> {{ page.pdf_label | default: "PDF" }}</a></li>{% endif %}
+            {% if page.doi %}<li><a href="https://doi.org/{{ page.doi }}" rel="noopener"><i class="fa-solid fa-link" aria-hidden="true"></i> DOI: {{ page.doi }}</a></li>{% endif %}
+            {% if page.external_url %}<li><a href="{{ page.external_url }}" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> {{ page.url_label | default: "Publisher" }}</a></li>{% endif %}
+            {% if page.code and page.code != "" %}<li><a href="{{ page.code }}" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a></li>{% endif %}
+        </ul>
+    </div>
+</article>

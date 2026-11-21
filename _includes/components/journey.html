@@ -1,0 +1,33 @@
+{%- comment -%}
+  Journey & Highlights timeline. Data: _data/timeline.yml (any order; sorted
+  newest-first here). Optional fields render only when present.
+{%- endcomment -%}
+{%- assign icons = "education:fa-graduation-cap,career:fa-briefcase,research:fa-flask,conference:fa-users,publication:fa-file-lines,award:fa-award,activity:fa-calendar-check" | split: "," -%}
+{%- assign events = site.data.timeline | sort: "date" | reverse -%}
+<ol class="journey">
+    {%- for e in events %}
+    {%- assign icon = "fa-circle" -%}
+    {%- for pair in icons -%}{%- assign kv = pair | split: ":" -%}{%- if kv[0] == e.category -%}{%- assign icon = kv[1] -%}{%- endif -%}{%- endfor -%}
+    {%- assign d = e.date | append: "" -%}
+    <li class="journey-item journey-item--{{ e.category }}">
+        <time class="journey-date" datetime="{{ d }}">{% if d.size == 7 %}{{ d | append: "-01" | date: "%B %Y" }}{% else %}{{ d }}{% endif %}</time>
+        <span class="journey-marker" aria-hidden="true"><i class="fa-solid {{ icon }}"></i></span>
+        <div class="journey-body">
+            <h3 class="journey-title"><span class="sr-only">{{ e.category | capitalize }}: </span>{{ e.title }}</h3>
+            {%- if e.organization or e.location %}
+            <p class="journey-meta">{{ e.organization }}{% if e.organization and e.location %} · {% endif %}{{ e.location }}</p>
+            {%- endif %}
+            {%- if e.description %}
+            <p class="journey-desc">{{ e.description }}</p>
+            {%- endif %}
+            {%- if e.image %}
+            <img class="journey-image" src="{{ e.image.src | relative_url }}" alt="{{ e.image.alt }}" loading="lazy" decoding="async">
+            {%- endif %}
+            {%- if e.link %}
+            {%- assign first = e.link.url | slice: 0 -%}
+            <p class="journey-link"><a href="{% if first == '/' %}{{ e.link.url | relative_url }}{% else %}{{ e.link.url }}{% endif %}"{% if first != '/' %} rel="noopener"{% endif %}>{{ e.link.label | default: "Details" }} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
+            {%- endif %}
+        </div>
+    </li>
+    {%- endfor %}
+</ol>
